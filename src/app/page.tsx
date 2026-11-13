@@ -1,7 +1,9 @@
 "use client";
 import { AboutSection } from "@/components/about-section/about-section";
 import { ContactModal } from "@/components/contact/contact-modal";
+import { FooterSection } from "@/components/footer-section/footer-section";
 import { HeroSection } from "@/components/hero-section/hero-section";
+import { LegalModal } from "@/components/legal-modal/legal-modal";
 import { Navbar } from "@/components/navbar/navbar";
 import { ProjectDetailModal } from "@/components/project-detail-modal/project-detail-modal";
 import { ServicesSection } from "@/components/services-section/services-section";
@@ -16,6 +18,10 @@ export default function Home() {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(
     null,
   );
+
+  const [legalType, setLegalType] = useState<
+    "cookies" | "privacy" | "terms" | null
+  >(null);
 
   return (
     <SmoothScrollProvider>
@@ -37,6 +43,11 @@ export default function Home() {
           <TestimonialsSection />
         </main>
 
+        <FooterSection
+          onOpenPrivacy={() => setLegalType("privacy")}
+          onOpenTerms={() => setLegalType("terms")}
+        />
+
         <ContactModal
           isOpen={contactOpen}
           onClose={() => setContactOpen(false)}
@@ -46,6 +57,8 @@ export default function Home() {
           project={selectedProject}
           onClose={() => setSelectedProject(null)}
         />
+
+        <LegalModal type={legalType} onClose={() => setLegalType(null)} />
       </div>
     </SmoothScrollProvider>
   );
