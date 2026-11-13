@@ -7,6 +7,7 @@ import { ProjectDetailModal } from "@/components/project-detail-modal/project-de
 import { ServicesSection } from "@/components/services-section/services-section";
 import { PinnedShowcase } from "@/components/showcase/showcase";
 import SmoothScrollProvider from "@/components/smooth-scroll-provider/smooth-scroll-provider";
+import { TestimonialsSection } from "@/components/testimonial/testimonial";
 import { ProjectItem } from "@/lib/agency-logic";
 import { useState } from "react";
 
@@ -32,6 +33,8 @@ export default function Home() {
           <PinnedShowcase
             onSelectProject={(project) => setSelectedProject(project)}
           />
+
+          <TestimonialsSection />
         </main>
 
         <ContactModal
