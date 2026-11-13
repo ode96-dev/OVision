@@ -1,4 +1,5 @@
 "use client";
+import { AboutSection } from "@/components/about-section/about-section";
 import { ContactModal } from "@/components/contact/contact-modal";
 import { HeroSection } from "@/components/hero-section/hero-section";
 import { Navbar } from "@/components/navbar/navbar";
@@ -16,6 +17,7 @@ export default function Home() {
 
         <main className="relative z-10">
           <HeroSection onExploreMore={() => setContactOpen(true)} />
+          <AboutSection />
         </main>
 
         <ContactModal
