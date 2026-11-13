@@ -7,19 +7,20 @@ import { ChevronDown, Menu, X, ArrowUpRight } from "lucide-react";
 import { useSmoothScroll } from "../smooth-scroll-provider/smooth-scroll-provider";
 import { RiInstagramLine } from "react-icons/ri";
 import { FaFacebook } from "react-icons/fa6";
+import { ContactModal } from "../contact/contact-modal";
 
-interface NavbarProps {
-  onOpenContact?: () => void;
-}
-
-export function Navbar({ onOpenContact }: NavbarProps) {
+export function Navbar() {
   const pathname = usePathname();
   const { scrollTo } = useSmoothScroll();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
 
   const isHome = pathname === "/";
+
+  // Helper to open the contact modal
+  const onOpenContact = () => setContactOpen(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -305,7 +306,7 @@ export function Navbar({ onOpenContact }: NavbarProps) {
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
-                if (onOpenContact) onOpenContact();
+                onOpenContact();
               }}
               className="text-left py-2 hover:text-[#0084FF] transition-colors"
             >
@@ -325,7 +326,7 @@ export function Navbar({ onOpenContact }: NavbarProps) {
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
-                  if (onOpenContact) onOpenContact();
+                  onOpenContact();
                 }}
                 className="px-5 py-2 rounded-full bg-[#0B2818] text-white text-xs font-bold uppercase tracking-wider cursor-pointer"
               >
@@ -338,6 +339,11 @@ export function Navbar({ onOpenContact }: NavbarProps) {
       <div
         className="h-20 w-full shrink-0 pointer-events-none"
         aria-hidden="true"
+      />
+
+      <ContactModal
+        isOpen={contactOpen}
+        onClose={() => setContactOpen(false)}
       />
     </>
   );

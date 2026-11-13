@@ -44,15 +44,6 @@ export function LegalModal({ type, onClose }: LegalModalProps) {
             standards.
           </p>
         </div>
-
-        <div className="pt-3 flex justify-end">
-          <button
-            onClick={onClose}
-            className="px-5 py-2 rounded-full bg-[#0B2818] text-white text-xs font-bold uppercase tracking-wider"
-          >
-            I Understand
-          </button>
-        </div>
       </div>
     </div>
   );
