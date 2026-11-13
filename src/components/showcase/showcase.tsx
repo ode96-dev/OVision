@@ -283,22 +283,6 @@ export function PinnedShowcase({ onSelectProject }: PinnedShowcaseProps) {
               </div>
 
               <div className="flex flex-wrap items-center justify-between gap-4">
-                <button
-                  onClick={() => {
-                    if (onSelectProject) onSelectProject(currentProject);
-                  }}
-                  className="group inline-flex items-center gap-3 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-xs hover:shadow-sm cursor-pointer"
-                >
-                  <span>View Projects</span>
-                  <div className="w-5 h-5 rounded-full bg-white/20 group-hover:bg-white text-white group-hover:text-[#0B2818] flex items-center justify-center transition-colors">
-                    <ArrowUpRight
-                      size={13}
-                      strokeWidth={2.5}
-                      className="transition-transform duration-300 group-hover:translate-x-px group-hover:-translate-y-px"
-                    />
-                  </div>
-                </button>
-
                 <div className="flex items-center gap-3">
                   <button
                     onClick={handlePrev}
