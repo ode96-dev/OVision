@@ -3,6 +3,7 @@ import { AboutSection } from "@/components/about-section/about-section";
 import { ContactModal } from "@/components/contact/contact-modal";
 import { HeroSection } from "@/components/hero-section/hero-section";
 import { Navbar } from "@/components/navbar/navbar";
+import { ServicesSection } from "@/components/services-section/services-section";
 import SmoothScrollProvider from "@/components/smooth-scroll-provider/smooth-scroll-provider";
 import { useState } from "react";
 
@@ -18,6 +19,8 @@ export default function Home() {
         <main className="relative z-10">
           <HeroSection onExploreMore={() => setContactOpen(true)} />
           <AboutSection />
+
+          <ServicesSection onExploreServices={() => setContactOpen(true)} />
         </main>
 
         <ContactModal
