@@ -115,22 +115,7 @@ export function FooterSection({
                 <Link href="/portfolio" className={ROW_CLASS}>
                   <NavRowContent index="02" label="Portfolio" />
                 </Link>
-                {isHome ? (
-                  <a
-                    href="#team"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollTo("#team");
-                    }}
-                    className={ROW_CLASS}
-                  >
-                    <NavRowContent index="03" label="Blog" />
-                  </a>
-                ) : (
-                  <Link href="/#team" className={ROW_CLASS}>
-                    <NavRowContent index="03" label="Blog" />
-                  </Link>
-                )}
+
                 <Link href="/about" className={ROW_CLASS}>
                   <NavRowContent index="04" label="About Us" />
                 </Link>

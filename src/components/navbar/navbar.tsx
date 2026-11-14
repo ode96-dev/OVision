@@ -171,26 +171,6 @@ export function Navbar() {
 
             {isHome ? (
               <a
-                href="#team"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick("#team");
-                }}
-                className="hover:text-[#0B2818] transition-colors"
-              >
-                Blog
-              </a>
-            ) : (
-              <Link
-                href="/#team"
-                className="hover:text-[#0B2818] transition-colors"
-              >
-                Blog
-              </Link>
-            )}
-
-            {isHome ? (
-              <a
                 href="#footer"
                 onClick={(e) => {
                   e.preventDefault();
