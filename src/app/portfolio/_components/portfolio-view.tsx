@@ -4,7 +4,7 @@ import Slash from "@/components/slash/slash";
 import SmoothScrollProvider from "@/components/smooth-scroll-provider/smooth-scroll-provider";
 import { ProjectItem } from "@/lib/agency-logic";
 import React, { useState } from "react";
-import Reveal from "./reveal";
+import Reveal from "../../../components/reveal/reveal";
 import { FLAGSHIP_STUDY, HERO_FACTS, METRICS, OUTCOMES } from "../_data/data";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
