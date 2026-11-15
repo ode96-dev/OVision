@@ -2,10 +2,8 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight, MapPin, Mail } from "lucide-react";
-import { useSmoothScroll } from "../smooth-scroll-provider/smooth-scroll-provider";
 import { LegalModal } from "../legal-modal/legal-modal";
 
 interface FooterSectionProps {
@@ -44,14 +42,11 @@ export function FooterSection({
   onOpenPrivacy,
   onOpenTerms,
 }: FooterSectionProps) {
-  const pathname = usePathname();
-  const { scrollTo } = useSmoothScroll();
   const reduceMotion = useReducedMotion();
 
   const [legalType, setLegalType] = useState<
     "cookies" | "privacy" | "terms" | null
   >(null);
-  const isHome = pathname === "/";
 
   const dy = reduceMotion ? 0 : 20;
 
@@ -124,9 +119,7 @@ export function FooterSection({
           </div>
 
           <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/50 font-normal">
-            <p>
-              © 2025 OVision all rights reserved. Made by Fatema Tuz Sultana
-            </p>
+            <p>© 2025 OVision all rights reserved.</p>
 
             <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[11px] font-semibold tracking-wider uppercase">
               <button
