@@ -7,8 +7,8 @@ import { SpringTiltCard } from "@/components/magnetic-button/magnetic-button";
 import { ContactModal } from "@/components/contact/contact-modal";
 import { CLIENTS, HUBS, LOCATIONS, METRICS, TENETS } from "./_data/data";
 import Reveal from "./_components/reveal";
-import Slash from "./_components/slash";
 import PhotoFrame from "./_components/photo-frame";
+import Slash from "@/components/slash/slash";
 
 export default function AboutPage() {
   const [contactOpen, setContactOpen] = useState(false);
